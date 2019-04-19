@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eux
 
-sudo systemd-nspawn -D bootstrap -u c -M vpn --capability=CAP_NET_ADMIN
+sudo systemd-nspawn -D bootstrap -M vpn --capability=CAP_NET_ADMIN
