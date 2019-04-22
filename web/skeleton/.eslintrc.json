@@ -1,0 +1,20 @@
+{
+    "extends": "standard",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "jquery": true
+    },
+    "rules": {
+        "semi": [
+            2,
+            "always"
+        ],
+        "prefer-arrow-callback": "warn",
+        "space-before-function-paren": "off",
+        "prefer-template": "warn",
+        "no-var": "warn",
+        "no-undef": "warn",
+        "no-unused-vars": "warn"
+    }
+}

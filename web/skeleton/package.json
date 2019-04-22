@@ -1,0 +1,26 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dist:html": "html-minifier --input-dir src --output-dir dist -c .html-minifier --file-ext html",
+    "dist:css": "for f in src/*.css; do name=$(basename $f); uglifycss $f > dist/$name; done",
+    "dist:js": "babel src -d dist && uglifyjs-folder dist -e -o dist -x .js",
+    "dist:assets": "cp assets/* dist",
+    "dist": "npm run clean && mkdir dist && npm run dist:html && npm run dist:css && npm run dist:js && npm run dist:assets"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "html-minifier": "^3.5.15",
+    "uglify-js": "^3.3.21",
+    "uglifycss": "0.0.29",
+    "uglifyjs-folder": "^1.5.1"
+  }
+}

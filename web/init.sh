@@ -29,3 +29,5 @@ rm node-v11.14.0-linux-x64.tar.xz
 
 echo "export PATH=$PATH:/home/c/node-v11.14.0-linux-x64/bin" >> .bashrc
 EOT
+
+cp -Rp skeleton bootstrap/home/c
