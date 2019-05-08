@@ -1,5 +1,5 @@
-$(document).ready(() => {
+"use strict";
+window.addEventListener("load", function() {
 
 });
-
 
