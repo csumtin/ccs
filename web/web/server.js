@@ -1,9 +1,9 @@
 "use strict";
 
-var http = require("http");
+var https = require("https");
 var fs = require("fs");
 
-var server = http.createServer(function (request, response) {
+var server = https.createServer({"key" : fs.readFileSync("privkey.pem"), "cert" : fs.readFileSync("fullchain.pem")}, function (request, response) {
   console.log(request.method, request.url);
 
   if(request.method === "GET") {
@@ -80,5 +80,5 @@ var server = http.createServer(function (request, response) {
 
 });
 
-server.listen(8000);
-console.log("Server running at http://localhost:8000");
+server.listen(8000, "0.0.0.0");
+console.log("Server running on 8000");

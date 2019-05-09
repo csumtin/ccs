@@ -1,5 +1,5 @@
 {
-  "name": "skeleton",
+  "name": "web",
   "version": "1.0.0",
   "scripts": {
     "clean": "rm -rf dist",
