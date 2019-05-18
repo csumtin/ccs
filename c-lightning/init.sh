@@ -34,7 +34,7 @@ wget https://github.com/ElementsProject/lightning/releases/download/v0.7.0/cligh
 unzip clightning-v0.7.0.zip
 rm clightning-v0.7.0.zip
 
-cd cilightning-v0.7.0
+cd clightning-v0.7.0
 ./configure
 make
 EOT
