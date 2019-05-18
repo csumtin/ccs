@@ -28,7 +28,7 @@ wget https://bitcoin.org/bin/bitcoin-core-0.17.1/bitcoin-0.17.1-x86_64-linux-gnu
 tar xvf bitcoin-0.17.1-x86_64-linux-gnu.tar.gz
 rm bitcoin-0.17.1-x86_64-linux-gnu.tar.gz
 
-echo "export PATH=$PATH:/home/c/bitcoin-0.17.1/bin" >> .bashrc
+echo 'export PATH=$PATH:/home/c/bitcoin-0.17.1/bin' >> .bashrc
 
 wget https://github.com/ElementsProject/lightning/releases/download/v0.7.0/clightning-v0.7.0.zip
 unzip clightning-v0.7.0.zip
