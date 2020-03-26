@@ -20,5 +20,5 @@ echo "Add user c and pick password"
 systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends firefox-esr
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends firefox-esr pulseaudio
 EOT
