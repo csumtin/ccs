@@ -17,8 +17,12 @@ echo "Pick root password"
 systemd-nspawn -D bootstrap passwd
 
 echo "Add user c and pick password"
-systemd-nspawn -D bootstrap adduser -u 1071 c
+systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends tor iptables
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends tor
+
+echo "TransPort 9040 IsolateClientAddr IsolateClientProtocol IsolateDestAddr IsolateDestPort
+DNSPort 5353
+SocksPort 0" > /etc/tor/torrc
 EOT
