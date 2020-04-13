@@ -20,5 +20,20 @@ echo "Add user c and pick password"
 systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends gedit dbus-x11
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends gedit dbus-x11 ca-certificates wget
+
+su - c
+
+mkdir -p temp
+cd temp
+wget https://github.com/jefferyto/gedit-control-your-tabs/archive/master.tar.gz
+tar xvf master.tar.gz
+rm master.tar.gz
+
+mkdir -p /home/c/.local/share/gedit/plugins
+cp gedit-control-your-tabs-master/controlyourtabs.plugin /home/c/.local/share/gedit/plugins/
+cp -Rp gedit-control-your-tabs-master/controlyourtabs /home/c/.local/share/gedit/plugins/
+
+rm -rf gedit-control-your-tabs-master
+
 EOT
