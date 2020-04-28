@@ -20,9 +20,9 @@ echo "Add user c and pick password"
 systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends wget ca-certificates xz-utils pulseaudio libnss3 libgtk2.0-0 libxss1 libgconf-2-4
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends wget ca-certificates unzip pulseaudio libnss3 libgtk-3-0 libxss1 libgconf-2-4 libatspi2.0-0  libatomic1 libgl1-mesa-glx
 
 su - c
-wget https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
-tar xvf Popcorn-Time-0.3.10-Linux-64.tar.xz
+wget https://get.popcorntime.app/repo/build/Popcorn-Time-0.4.4-linux64.zip
+unzip Popcorn-Time-0.4.4-linux64.zip
 EOT
